@@ -1,11 +1,12 @@
 type Props = {
-	posts: Post[];
+	promise: Promise<Post[]>;
 };
-function UserPosts({ posts }: Props) {
+async function UserPosts({ promise }: Props) {
+	const posts = await promise;
 	return (
 		<div>
 			{posts.map((post) => (
-				<div key={post.id} className="mb-2 last:mb-0">
+				<div key={post.id} className="mb-4 last:mb-0">
 					<h3 className="font-medium text-blue-400 text-lg capitalize">
 						{post.title.slice(0, 30)}
 					</h3>
