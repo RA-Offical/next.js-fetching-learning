@@ -13,7 +13,9 @@ async function Users() {
 			<div>
 				{users.map((user) => (
 					<div key={user.id} className="mb-2 last:mb-0 py-3 bg-blue-100 px-4 rounded-md">
-						<Link href={`/users/${1}`}>{user.name}</Link>
+						<Link href={`/users/${user.id}`} className="hover:underline hover:text-blue-700">
+							{user.name}
+						</Link>
 					</div>
 				))}
 			</div>
